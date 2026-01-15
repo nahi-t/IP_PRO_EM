@@ -1,19 +1,7 @@
 import { motion } from 'framer-motion';
-import { LucideIcon } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
-interface StatCardProps {
-  title: string;
-  value: string | number;
-  icon: LucideIcon;
-  trend?: {
-    value: number;
-    isPositive: boolean;
-  };
-  delay?: number;
-}
-
-const StatCard = ({ title, value, icon: Icon, trend, delay = 0 }: StatCardProps) => {
+const StatCard = ({ title, value, icon: Icon, trend, delay = 0 }) => {
   return (
     <motion.div
       initial={{ y: 20, opacity: 0 }}

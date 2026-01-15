@@ -2,9 +2,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
-import { Employee, departments } from '@/types/employee';
+import { departments } from '@/data/mockEmployees';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -34,16 +32,7 @@ const employeeSchema = z.object({
   status: z.enum(['active', 'inactive', 'on-leave']),
 });
 
-type EmployeeFormData = z.infer<typeof employeeSchema>;
-
-interface EmployeeModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSave: (employee: Omit<Employee, 'id'> | Employee) => void;
-  employee?: Employee | null;
-}
-
-const EmployeeModal = ({ isOpen, onClose, onSave, employee }: EmployeeModalProps) => {
+const EmployeeModal = ({ isOpen, onClose, onSave, employee }) => {
   const {
     register,
     handleSubmit,
@@ -51,7 +40,7 @@ const EmployeeModal = ({ isOpen, onClose, onSave, employee }: EmployeeModalProps
     reset,
     watch,
     formState: { errors },
-  } = useForm<EmployeeFormData>({
+  } = useForm({
     resolver: zodResolver(employeeSchema),
     defaultValues: {
       status: 'active',
@@ -86,7 +75,7 @@ const EmployeeModal = ({ isOpen, onClose, onSave, employee }: EmployeeModalProps
     }
   }, [employee, reset]);
 
-  const onSubmit = (data: EmployeeFormData) => {
+  const onSubmit = (data) => {
     const employeeData = {
       firstName: data.firstName,
       lastName: data.lastName,
@@ -233,9 +222,7 @@ const EmployeeModal = ({ isOpen, onClose, onSave, employee }: EmployeeModalProps
             <Label>Status</Label>
             <Select
               value={watch('status')}
-              onValueChange={(value: 'active' | 'inactive' | 'on-leave') =>
-                setValue('status', value)
-              }
+              onValueChange={(value) => setValue('status', value)}
             >
               <SelectTrigger>
                 <SelectValue />

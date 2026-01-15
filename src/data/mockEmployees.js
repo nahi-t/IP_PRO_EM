@@ -1,6 +1,14 @@
-import { Employee } from '@/types/employee';
+export const departments = [
+  'Engineering',
+  'Design',
+  'Marketing',
+  'Sales',
+  'HR',
+  'Finance',
+  'Operations',
+];
 
-export const mockEmployees: Employee[] = [
+export const mockEmployees = [
   {
     id: '1',
     firstName: 'Sarah',

@@ -4,12 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
-interface HeaderProps {
-  searchQuery: string;
-  onSearchChange: (query: string) => void;
-}
-
-const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
+const Header = ({ searchQuery, onSearchChange }) => {
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}

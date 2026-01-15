@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MoreVertical, Edit, Trash2, Eye } from 'lucide-react';
-import { Employee } from '@/types/employee';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -12,15 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-interface EmployeeCardProps {
-  employee: Employee;
-  index: number;
-  onView: (employee: Employee) => void;
-  onEdit: (employee: Employee) => void;
-  onDelete: (id: string) => void;
-}
-
-const getStatusStyles = (status: Employee['status']) => {
+const getStatusStyles = (status) => {
   switch (status) {
     case 'active':
       return 'bg-success/10 text-success border-success/20';
@@ -33,8 +24,8 @@ const getStatusStyles = (status: Employee['status']) => {
   }
 };
 
-const getDepartmentColor = (department: string) => {
-  const colors: Record<string, string> = {
+const getDepartmentColor = (department) => {
+  const colors = {
     Engineering: 'bg-primary/10 text-primary',
     Design: 'bg-accent/10 text-accent',
     Marketing: 'bg-warning/10 text-warning',
@@ -46,7 +37,7 @@ const getDepartmentColor = (department: string) => {
   return colors[department] || 'bg-muted text-muted-foreground';
 };
 
-const EmployeeCard = ({ employee, index, onView, onEdit, onDelete }: EmployeeCardProps) => {
+const EmployeeCard = ({ employee, index, onView, onEdit, onDelete }) => {
   const initials = `${employee.firstName[0]}${employee.lastName[0]}`;
 
   return (

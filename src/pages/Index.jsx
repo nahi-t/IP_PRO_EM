@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Users, UserCheck, UserX, Clock, Plus } from 'lucide-react';
-import { Employee } from '@/types/employee';
 import { mockEmployees } from '@/data/mockEmployees';
 import Header from '@/components/layout/Header';
 import StatCard from '@/components/dashboard/StatCard';
@@ -13,12 +12,12 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
 const Index = () => {
-  const [employees, setEmployees] = useState<Employee[]>(mockEmployees);
+  const [employees, setEmployees] = useState(mockEmployees);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedDepartment, setSelectedDepartment] = useState<string | null>(null);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null);
-  const [viewingEmployee, setViewingEmployee] = useState<Employee | null>(null);
+  const [editingEmployee, setEditingEmployee] = useState(null);
+  const [viewingEmployee, setViewingEmployee] = useState(null);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
   const stats = useMemo(() => {
@@ -46,8 +45,8 @@ const Index = () => {
     });
   }, [employees, searchQuery, selectedDepartment]);
 
-  const handleAddEmployee = (employeeData: Omit<Employee, 'id'>) => {
-    const newEmployee: Employee = {
+  const handleAddEmployee = (employeeData) => {
+    const newEmployee = {
       ...employeeData,
       id: Date.now().toString(),
     };
@@ -55,7 +54,7 @@ const Index = () => {
     toast.success('Employee added successfully!');
   };
 
-  const handleEditEmployee = (updatedEmployee: Employee) => {
+  const handleEditEmployee = (updatedEmployee) => {
     setEmployees((prev) =>
       prev.map((emp) =>
         emp.id === updatedEmployee.id ? updatedEmployee : emp
@@ -64,12 +63,12 @@ const Index = () => {
     toast.success('Employee updated successfully!');
   };
 
-  const handleDeleteEmployee = (id: string) => {
+  const handleDeleteEmployee = (id) => {
     setEmployees((prev) => prev.filter((emp) => emp.id !== id));
     toast.success('Employee deleted successfully!');
   };
 
-  const handleSave = (employee: Omit<Employee, 'id'> | Employee) => {
+  const handleSave = (employee) => {
     if ('id' in employee) {
       handleEditEmployee(employee);
     } else {
@@ -78,12 +77,12 @@ const Index = () => {
     setEditingEmployee(null);
   };
 
-  const openEditModal = (employee: Employee) => {
+  const openEditModal = (employee) => {
     setEditingEmployee(employee);
     setIsModalOpen(true);
   };
 
-  const openViewDetails = (employee: Employee) => {
+  const openViewDetails = (employee) => {
     setViewingEmployee(employee);
     setIsDetailsOpen(true);
   };

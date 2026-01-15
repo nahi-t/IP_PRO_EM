@@ -1,24 +1,13 @@
-import { motion } from 'framer-motion';
-import { X, Mail, Phone, Building, Briefcase, Calendar, DollarSign } from 'lucide-react';
-import { Employee } from '@/types/employee';
+import { Mail, Phone, Building, Briefcase, Calendar, DollarSign } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
 } from '@/components/ui/dialog';
 
-interface EmployeeDetailsProps {
-  employee: Employee | null;
-  isOpen: boolean;
-  onClose: () => void;
-  onEdit: (employee: Employee) => void;
-}
-
-const getStatusStyles = (status: Employee['status']) => {
+const getStatusStyles = (status) => {
   switch (status) {
     case 'active':
       return 'bg-success/10 text-success border-success/20';
@@ -31,12 +20,12 @@ const getStatusStyles = (status: Employee['status']) => {
   }
 };
 
-const EmployeeDetails = ({ employee, isOpen, onClose, onEdit }: EmployeeDetailsProps) => {
+const EmployeeDetails = ({ employee, isOpen, onClose, onEdit }) => {
   if (!employee) return null;
 
   const initials = `${employee.firstName[0]}${employee.lastName[0]}`;
 
-  const formatCurrency = (amount: number) => {
+  const formatCurrency = (amount) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
@@ -44,7 +33,7 @@ const EmployeeDetails = ({ employee, isOpen, onClose, onEdit }: EmployeeDetailsP
     }).format(amount);
   };
 
-  const formatDate = (dateString: string) => {
+  const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',

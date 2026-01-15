@@ -1,16 +1,7 @@
-import { motion } from 'framer-motion';
-import { departments, Department } from '@/types/employee';
+import { departments } from '@/data/mockEmployees';
 import { Button } from '@/components/ui/button';
 
-interface DepartmentFilterProps {
-  selectedDepartment: string | null;
-  onSelectDepartment: (department: string | null) => void;
-}
-
-const DepartmentFilter = ({
-  selectedDepartment,
-  onSelectDepartment,
-}: DepartmentFilterProps) => {
+const DepartmentFilter = ({ selectedDepartment, onSelectDepartment }) => {
   return (
     <div className="flex flex-wrap gap-2">
       <Button
