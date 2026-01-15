@@ -84,13 +84,15 @@ The application features:
 
 ## Author
 
-Developed by Group members
-Name                ID
-1.Nahom Ketema     RMD 1872
-2.Ephrem Dejene    DDU 1600228
-3.Beza Gezahegn    RMD 2812
-4.Elroe Mekonnen   RMD 827
-5.Ahmed Hassan     DDU 1601278 
+### Developed by: Group Members
+
+| No. | Full Name | ID Number |
+| :--- | :--- | :--- |
+| 1 | Nahom Ketema | RMD 1872 |
+| 2 | Ephrem Dejene | DDU 1600228 |
+| 3 | Beza Gezahegn | RMD 2812 |
+| 4 | Elroe Mekonnen | RMD 827 |
+| 5 | Ahmed Hassan | DDU 1601278 |
 
 ## License
 
