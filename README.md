@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# StaffHub - Employee Management System
 
-## Project info
+A modern, responsive employee management application built with React and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
 
-## How can I edit this code?
+StaffHub is a comprehensive employee management solution designed to streamline HR operations. It provides an intuitive interface for managing employee information, tracking attendance, and monitoring workforce statistics.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Employee Dashboard** - Real-time overview of workforce statistics including total employees, active staff, and department distribution
+- **Employee Directory** - Browse, search, and filter employees by department, status, or name
+- **Employee Profiles** - Detailed employee information including contact details, department, and status
+- **Dark/Light Mode** - Built-in theme toggle for comfortable viewing in any lighting condition
+- **Responsive Design** - Fully responsive layout that works on desktop, tablet, and mobile devices
+- **Modern UI** - Clean, professional interface with smooth animations
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+| Technology | Purpose |
+|------------|---------|
+| React 18 | Frontend framework |
+| Tailwind CSS | Styling and responsive design |
+| Framer Motion | Animations and transitions |
+| Lucide React | Icon library |
+| React Router | Navigation and routing |
+| Shadcn/UI | UI component library |
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v18 or higher)
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Clone the repository
+git clone <repository-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd staffhub
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/
+│   ├── dashboard/      # Dashboard statistics components
+│   ├── employees/      # Employee-related components
+│   ├── layout/         # Header, navigation components
+│   └── ui/             # Reusable UI components
+├── data/               # Mock data and constants
+├── hooks/              # Custom React hooks
+├── pages/              # Page components
+└── lib/                # Utility functions
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Screenshots
 
-## What technologies are used for this project?
+The application features:
+- A clean dashboard with animated statistics cards
+- Employee cards with avatars and quick action buttons
+- Department filtering and search functionality
+- Modal dialogs for detailed employee information
 
-This project is built with:
+## Future Enhancements
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- [ ] Attendance tracking system
+- [ ] Leave management
+- [ ] Performance reviews
+- [ ] Reporting and analytics
+- [ ] Database integration
 
-## How can I deploy this project?
+## Author
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Developed by Group members
+Name                ID
+1.Nahom Ketema     RMD 1872
+2.Ephrem Dejene    DDU 1600228
+3.Beza Gezahegn    RMD 2812
+4.Elroe Mekonnen   RMD 827
+5.Ahmed Hassan     DDU 1601278 
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is proprietary and confidential.# IP_PRO_EM
