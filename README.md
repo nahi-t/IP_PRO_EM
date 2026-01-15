@@ -1,4 +1,4 @@
-# StaffHub - Employee Management System
+# GROUP 5 IP_PRO_EM - Employee Management 
 
 A modern, responsive employee management application built with React and Tailwind CSS.
 
